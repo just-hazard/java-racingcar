@@ -9,6 +9,8 @@ import static java.util.stream.Collectors.toList;
 
 public class Cars {
 
+    public static final String SPOT = ",";
+    public static final String SPOT_SPACE = ", ";
     private List<Car> cars = new ArrayList<>();
     private final CarMovingStrategy carMovingStrategy = new CarMovingStrategy();
 
@@ -21,7 +23,7 @@ public class Cars {
     }
 
     private void registerCar(String carNames) {
-        cars = Arrays.stream(carNames.split(","))
+        cars = Arrays.stream(carNames.split(SPOT))
                 .map(Car::new)
                 .collect(toList());
     }
@@ -29,7 +31,7 @@ public class Cars {
     public String getWinnerNames() {
         return getWinners().stream()
                 .map(Car::getName)
-                .collect(joining(", "));
+                .collect(joining(SPOT_SPACE));
     }
 
     private List<Car> getWinners() {
