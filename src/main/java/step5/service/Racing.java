@@ -14,7 +14,7 @@ public class Racing {
 
     public Racing(String carNames, int moveCount) {
         this.cars = registerCars(carNames);
-        numberOfCarMove(moveCount);
+        moveOfCars(moveCount);
     }
 
     public static Cars registerCars(String carNames) {
@@ -25,7 +25,7 @@ public class Racing {
         cars.moveOfCars();
     }
 
-    public void numberOfCarMove(int moveCount) {
+    public void moveOfCars(int moveCount) {
         IntStream.range(0,moveCount).forEach(i -> race());
     }
 
